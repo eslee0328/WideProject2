@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>사원정보 수정</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+  <style>
+    body {
+      font-size: 16px;
+
+    }
+
+    .container {
+      width: 800px;
+      padding: 0px;
+      margin: 0px 0px 0px 20px;
+      /*왜 20px주면 안먹는걸까... */
+    }
+
+    .row {
+      margin: 0px;
+    }
+
+    #title {
+      margin: 20px 0px 20px 0px;
+      font-weight: bold;
+    }
+
+    .col-sm-2,
+    .col-sm-6 {
+      padding: 0px;
+    }
+
+    img {
+      margin-bottom: 10px;
+    }
+
+    table td {
+      height: 40px;
+    }
+
+    .prj,
+    .tech {
+      width: 100%;
+    }
+
+    .prj th,
+    .prj td,
+    .tech th,
+    .tech td {
+      border: 1px solid black;
+      text-align: center;
+      height: 20px;
+    }
+
+    .btnArea {
+      margin-top: 10px;
+      text-align: right;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <h1 id="title">사원정보 수정</h1>
+      <div class="col-sm-3">
+        <img src="../11.png" alt="사진">
+        <button class="btn btn-sm btn-primary">변경</button>
+      </div>
+      <div class="col-sm-9">
+        <table>
+          <tbody>
+            <tr>
+              <td class="col-sm-2">사원번호</td>
+              <td class="col-sm-6">12</td>
+              <td class="col-sm-2">직책</td>
+              <td class="col-sm-2">대리</td>
+            </tr>
+            <tr>
+              <td>한글이름</td>
+              <td>홍길동</td>
+              <td>부서</td>
+              <td>개발부</td>
+            </tr>
+            <tr>
+              <td>영문이름</td>
+              <td>Hong GilDong</td>
+              <td>경력</td>
+              <td>4년</td>
+            </tr>
+            <tr>
+              <td>우편번호</td>
+              <td>000-0000 <button class="btn btn-sm btn-primary">검색</button></td>
+              <td>등급</td>
+              <td>중급</td>
+            </tr>
+            <tr>
+              <td>도로명주소</td>
+              <td>서울시 가산동</td>
+              <td>입사일</td>
+              <td>2017.6.20</td>
+            </tr>
+            <tr>
+              <td>상세주소</td>
+              <td>000-000</td>
+              <td>자격증</td>
+              <td>정보처리기사</td>
+            </tr>
+          </tbody>
+        </table><br>
+        <h4>사용가능기술</h4>
+        <table class="tech">
+          <thead>
+            <tr>
+              <th></th>
+              <th>기술명</th>
+              <th>등급</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox" class="selBtn" name="chkBtn"></td>
+              <td>
+                JAVA
+              </td>
+              <td>
+                상
+              </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" class="selBtn" name="chkBtn"></td>
+              <td>
+                C
+              </td>
+              <td>
+                중
+              </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" class="selBtn" name="chkBtn"></td>
+              <td>
+                <select name="tech" id="tech">
+                  <option value="">---</option>
+                  <option value="JAVA">JAVA</option>
+                  <option value="C">C</option>
+                  <option value="ORACLE">ORACLE</option>
+                </select>
+              </td>
+              <td>
+                <select name="rank" id="rank">
+                  <option value="">---</option>
+                  <option value="상">상</option>
+                  <option value="중">중</option>
+                  <option value="하">하</option>
+                </select>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="btnArea">
+          <button class="btn btn-sm btn-primary" id="addBtn">추가</button>
+          <button class="btn btn-sm btn-danger" id="delBtn">삭제</button>
+        </div>
+        <h4>참여 프로젝트</h4>
+        <table class="prj">
+          <thead>
+            <tr>
+              <th>프로젝트번호</th>
+              <th>프로젝트명</th>
+              <th>PM</th>
+              <th>담당자</th>
+              <th>기간</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>프로젝트1</td>
+              <td>홍길동</td>
+              <td>김가가</td>
+              <td>2021.2.20 ~ 2021.5.31</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>프로젝트2</td>
+              <td>홍길동</td>
+              <td>이나나</td>
+              <td>2020.4.30 ~ 2020.7.25</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="btnArea">
+          <button class="btn btn-primary" id="regBtn">수정</button>
+          <button class="btn btn-danger" id="cancelBtn">취소</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src=" https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      // 추가 버튼을 누르면 한 줄이 추가됨
+      $("#addBtn").on("click", function () {
+        $(".tech").append(
+          '<tr>\
+              <td><input type="checkbox" class="selBtn"></td>\
+              <td>\
+                <select name="tech" id="tech">\
+                  <option value="">---</option>\
+                  <option value="JAVA">JAVA</option>\
+                  <option value="C">C</option>\
+                  <option value="ORACLE">ORACLE</option>\
+                </select>\
+              </td>\
+              <td>\
+                <select name="rank" id="rank">\
+                  <option value="">---</option>\
+                  <option value="상">상</option>\
+                  <option value="중">중</option>\
+                  <option value="하">하</option>\
+                </select>\
+              </td>\
+            </tr>'
+        );
+
+        //삭제 버튼을 누르면 선택한 행이 삭제됨
+        $("#delBtn").on("click", function () {
+          var checkTechs = $("[name='chkBtn']:checked");
+          for (var i = checkTechs.length - 1; i > -1; i--) {
+            checkTechs.eq(i).closest('tr').remove();
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
