@@ -266,11 +266,11 @@
   <script>
     $(document).ready(function () {
 
-      // 추가 버튼을 누르면 한 줄이 추가됨
+     // 추가 버튼을 누르면 한 줄이 추가됨
        $("#addBtn").on("click", function () {
         $(".tech").append(
           '<tr>\
-              <td><input type="checkbox" class="selBtn"></td>\
+              <td><input type="checkbox" class="selBtn" name="chkBtn"></td>\
               <td>\
                 <select name="tech" id="tech">\
                   <option value="">-기술-</option>\
@@ -289,6 +289,7 @@
               </td>\
             </tr>'
         ); 
+       });
         
          $("#addBtn1").on("click", function () {
         $(".prj").append(
@@ -297,18 +298,15 @@
         <td><input type="text" size="12"></td>\
         <td><input type="text" size="12"></td></tr>')
       });
-    
-        
 
-        //삭제 버튼을 누르면 선택한 행이 삭제됨
-        $("#delBtn").on("click", function () {
-          var checkTechs = $("[name='chkBtn']:checked");
-          for (var i = checkTechs.length-1; i>-1; i--) {
-            checkTechs.eq(i).closest('tr').remove();
-          }
-        });
-      });
-    });
+         // 삭제
+     	$("#delBtn").on("click", function() {
+    		var checkList = $("[name='chkBtn']:checked");
+    		for(var i=checkList.length -1; i>-1; i--){
+    			checkList.eq(i).closest('tr').remove();
+    		}
+    	});
+    }); 
   </script>
 </body>
 
